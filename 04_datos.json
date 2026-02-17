@@ -1,0 +1,26 @@
+{
+    "ejemplo_documento_mangodb":{
+        "descripcon": "Ejemplo de un documento tipico en MongoDB, que utiliza BSON internamente",
+        "datos": {
+            "_id": "cicada3301",
+            "producto": "chavarinphone del infinito",
+            "precio": 99999999999999999999999999999999999999999999999999,
+            "disponible": true,
+            "categorias": ["electronica", "moviles", "smartphones"],
+            "especificaciones": {
+                "procesador": "Ultra 9 985k infinite edition",
+                "ram": "512gpb",
+                "almacenamiento": "256yb",
+                "pantalla": "Iris 16k 2000hz 1.8 pulgadas",
+                "bateria": "1TWh"
+            },
+            "fecha_creacion": "2026-02-29T10:00:00Z",
+            "reviews":[
+                {
+                    "usuario": "Chavarin",
+                    "comentario": "Tremenda obra maestra 20/10 y Good"
+                }
+            ]
+        }
+    }
+}

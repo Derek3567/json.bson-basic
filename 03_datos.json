@@ -1,0 +1,20 @@
+{
+    "ejemplo_json":{
+        "descripcion":"Ejemplo de un documento JSON con varios tipos de estructuras anidadas",
+        "datos":{
+            "nombre": "Carlos Lopes",
+            "edad": 30,
+            "activo": true,
+            "hobbies":["futbol", "cocina", "viajar"],
+            "direccion":{
+                "calle": "Calle Salsa 123",
+                "ciudad": "Ciudad de Mexico",
+                "pais": "Mexico"
+            },
+            "contacto": null
+        },
+        "nota": "Este ejemplo muestra como JSON puede representar diferentes tipos de datos y estructuras complejas"
+    }
+}
+
+

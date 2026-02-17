@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-image: linear-gradient(to left, red, orange);
+            opacity: 0.7;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+            font-weight: 900px;
+        }
+
+        div{
+            border: solid red 4px;
+            box-shadow: 20px 20px 20px 20px red;
+            padding: 10px;
+            width: fit-content;
+            animation: si;
+            animation:
+             mover 0.1s steps(1200) infinite alternate,
+             si 0.1s steps(1200) infinite alternate,
+             xd 0.1s steps(1200) infinite alternate,
+             ver 0.2s steps(1200) infinite alternate,
+             brillo 0.1s steps(1200) infinite alternate,
+             brillo1 0.1s steps(1200) infinite alternate,
+             talco 0.1s steps(1200) infinite alternate;
+        }
+
+        @keyframes mover{
+            0%{translate: -900px -200px;}
+            50%{translate: 200px 200px;}
+            100%{translate: 0px 0px;}
+        }
+
+        @keyframes si{
+            0%{rotate: 180deg;}
+            100%{rotate: 360deg;}
+        }
+
+        @keyframes xd{
+            0%{scale: 2,}
+            50%{scale: 7;}
+            100%{scale: 0.4;}
+        }
+
+        @keyframes ver{
+            0%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+
+        @keyframes brillo{
+            0%{filter: brightness(1);}
+            100%{filter: brightness(3000);}
+        }
+
+        @keyframes brillo1{
+            0%{filter:contrast(1);}
+            100%{filter: contrast(100);}
+        }
+
+        @keyframes talco{
+            0%{box-shadow: 3000000px 3000000px 3000000px 3000000px yellow;}
+            100%{box-shadow: 3px 3px 3px 3px yellow;}
+        }
+
+        @keyframes rotar3d {
+  from { transform: rotateY(0deg 0deg 0deg 0deg); }
+  to { transform: rotateY(360deg 360deg 360deg 360deg);}
+}
+    </style>
+</head>
+<body>
+    <div>
+    <img src="descarga (1).jfif" alt="">
+    </div>
+
+    <div>
+    <h1 id="xd">Entra a la consola del navegador</h1>
+    </div>
+
+    <div>
+    <h1 id="xd">Entra a la consola del navegador</h1>
+    </div>
+
+    <div>
+    <h1 id="xd">Entra a la consola del navegador</h1>
+    </div>
+
+    <div>
+    <h1 id="xd">Entra a la consola del navegador</h1>
+    </div>
+
+    <script src="datatypes.js"></script>
+</body>
+</html>
