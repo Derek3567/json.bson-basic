@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* ===== TERRARIA CALAMITY - LEGENDARY ARCANE EDITION ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Uncial+Antiqua&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(123,47,247,0.15), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255,0,255,0.1), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(0,150,255,0.1), transparent 40%),
+        linear-gradient(180deg, #140a24 0%, #0b0617 60%, #05030a 100%);
+    font-family: 'Cinzel', serif;
+    color: #d6ccff;
+}
+
+/* ===== TÍTULO MÍSTICO SUPREMO ===== */
+h1 {
+    text-align: center;
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 2.3rem;
+    margin-bottom: 60px;
+    color: #c084ff;
+    letter-spacing: 3px;
+    text-shadow:
+        0 0 8px #7b2ff7,
+        0 0 18px #4b00ff,
+        0 0 35px rgba(123, 47, 247, 0.8);
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow:
+            0 0 6px #7b2ff7,
+            0 0 15px #4b00ff,
+            0 0 25px rgba(123, 47, 247, 0.6);
+    }
+    to {
+        text-shadow:
+            0 0 12px #ff00ff,
+            0 0 25px #7b2ff7,
+            0 0 45px rgba(255, 0, 255, 0.9);
+    }
+}
+
+/* Contenedor */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ===== PANEL ARCANO MEJORADO ===== */
+.panel {
+    position: relative;
+    background: linear-gradient(145deg, #1b0f30, #140a24);
+    border: 2px solid #6a35ff;
+    padding: 35px;
+    margin: 25px;
+    width: 100%;
+    max-width: 780px;
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    box-shadow:
+        0 0 20px rgba(123, 47, 247, 0.6),
+        0 0 50px rgba(75, 0, 255, 0.4),
+        inset 0 0 25px rgba(123, 47, 247, 0.25);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+/* Aura intensa al hover */
+.panel:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow:
+        0 0 30px #7b2ff7,
+        0 0 60px #2a00ff,
+        0 0 100px rgba(255, 0, 255, 0.5),
+        inset 0 0 35px rgba(123, 47, 247, 0.4);
+}
+
+/* Energía arcana animada */
+.panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(160, 100, 255, 0.2),
+        transparent
+    );
+    animation: arcaneFlow 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes arcaneFlow {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(120%); }
+}
+
+/* Subtítulos */
+.panel h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #ff7bff;
+    text-shadow:
+        0 0 6px #ff00ff,
+        0 0 14px #7b2ff7;
+}
+
+/* Texto */
+.panel p {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+    color: #cbb6ff;
+    line-height: 1.6;
+}
+
+/* ===== BLOQUE JSON LEGENDARIO ===== */
+pre {
+    background: linear-gradient(145deg, #0f0820, #140a2b);
+    border: 1px solid #7b2ff7;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    color: #66ccff;
+    overflow-x: auto;
+    box-shadow:
+        inset 0 0 20px rgba(123, 47, 247, 0.4),
+        0 0 15px rgba(75, 0, 255, 0.4);
+}
+    </style>
+</head>
+
+    </style>
+</head>
+<body>
+    <h1>Demostracion de JSON - ¿Para que sirve?</h1>
+    <div class="container">
+        <!-- Panel de JSON crudo-->
+        <div class="panel">
+            <h2>JSON (Texto)</h2>
+            <p>Asi se ve el texto plano</p>
+            <pre id="jsonraw"></pre>
+
+            <!-- Panel de datos extraidos-->
+             <div class="panel">
+                <h2>Datos utilizados</h2>
+                <p>Asi usamos los datos del JSON en  nuestra app</p>
+                <div id="datosextraidos"></div>
+             </div>
+        </div>
+    </div>
+
+
+    <script>
+        const miJSON = {
+            "ejemplo_JSON": {
+                "descripcion": "Ejemplo de documento JSON con varios tipos de datos",
+                "datos": {
+                    "nombre": "Derek Yohan Vallejo Rojas",
+                    "edad": 16,
+                    "activo": true,
+                    "hobbies": ["programar", "derrotar jefes en Terraria", "hace bases de datos"],
+                    "direccion": {
+                        "calle": "Roma",
+                        "ciudad": "Paris",
+                        "Pais": "Alemania"
+                    },
+                    "contacto": null
+                },
+                "nota": "Este ejemplo muestra como JSON se puede representar con diferentes tipos de datos"
+            }
+        };
+        // Mostrar JSON como texto
+        document.getElementById("jsonraw").textContent = JSON.stringify(miJSON, null, 2)
+
+        // extraer datos del JSON
+
+        const datos = miJSON.ejemplo_JSON.datos;
+        const datosDiv = document.getElementById("datosextraidos");
+
+        // Crear html con datos extraidos
+        datosDiv.innerHTML = `
+        <div class=datos-item>
+            <span class=label>Nombre:</span>
+            <span class=value>${datos.nombre}</span>
+        </div>
+
+        <div class=datos-item>
+            <span class=label>Edad:</span>
+            <span class=value>${datos.edad}</span>
+        </div>
+
+        <div class=datos-item>
+            <span class=label>Activo:</span>
+            <span class=value>${datos.activo}</span>
+        </div>
+
+        <div class=datos-item>
+            <span class=label>Edad:</span>
+            <span class=value>${datos.hobbies.join(", ")}</span>
+        </div>
+
+        <div class=datos-item>
+            <span class=label>Direccion:</span>
+            <span class=value>${datos.direccion.calle}, ${datos.direccion.ciudad}, ${datos.direccion.Pais}</span>
+        </div>
+
+        <div class=datos-item>
+            <span class=label>Contacto:</span>
+            <span class=value>${datos.contacto || "No disponible"}</span>
+        </div>
+        `
+    </script>
+</body>
+</html>
